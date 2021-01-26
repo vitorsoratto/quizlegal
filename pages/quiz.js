@@ -1,9 +1,14 @@
+import React from 'react';
 import styled from 'styled-components';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import GitHubCorner from '../src/components/GitHubCorner';
-import HomeButton from '../src/components/Button';
+import LinkButton from '../src/components/Button';
+import QuizLogo from '../src/components/QuizLogo';
 
 const QuizContainer = styled.div`
   width: 100%;
@@ -16,29 +21,40 @@ const QuizContainer = styled.div`
   }
 `;
 
-export default function Home() {
-    return (
-      <QuizBackground backgroundImage={db.bg}>
-        <QuizContainer>
-          <Widget>
-            <Widget.Header>
-              <h1>Página do Quiz</h1>
-            </Widget.Header>
-            <Widget.Content>
-              <p>Lorem ipsum dolor sit amet...</p>
-            </Widget.Content>
-          </Widget>
-          <Widget>
-            <Widget.Content>
-              <h1>Quizes da galera</h1>
-              <p>Lorem ipsum dolor sit amet...</p>
-              <HomeButton localization="/" value="Voltar para o inicio">
-                teste
-                </HomeButton>
-            </Widget.Content>
-          </Widget>
-        </QuizContainer>
-        <GitHubCorner projectUrl="https://github.com/vitorsoratto"/>
-      </QuizBackground>
-    )
-  }
+export default function QuizPage() {
+  const router = useRouter();
+  return (
+    <QuizBackground backgroundImage={db.bg}>
+      <Head>
+        <title>Quiz - Quiz Legal - Imersão React/NextJS</title>
+      </Head>
+      <QuizContainer>
+        <QuizLogo />
+        <Widget>
+          <Widget.Header>
+            <h1>Página do Quiz</h1>
+          </Widget.Header>
+          <Widget.Content>
+            <p>Lorem ipsum dolor sit amet...</p>
+          </Widget.Content>
+        </Widget>
+        <Widget>
+          <Widget.Content>
+            <h1>Quizes da galera</h1>
+            <p>Lorem ipsum dolor sit amet...</p>
+            <form onSubmit={function (event) {
+              event.preventDefault();
+              router.push('/');
+            }}
+            >
+              <LinkButton type="submit">
+                Voltar para o inicio
+              </LinkButton>
+            </form>
+          </Widget.Content>
+        </Widget>
+      </QuizContainer>
+      <GitHubCorner projectUrl="https://github.com/vitorsoratto/quizlegal" />
+    </QuizBackground>
+  );
+}
