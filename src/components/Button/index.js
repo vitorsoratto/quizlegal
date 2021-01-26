@@ -16,7 +16,7 @@ const Button = styled.button`
 
 export default function HomeButton({ localization, value }) {
     return (
-        <a href={localization} target="_blank">
+        <a href={localization}>
             <Button> 
                 {value}
             </Button>
