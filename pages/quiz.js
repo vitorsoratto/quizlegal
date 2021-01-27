@@ -40,6 +40,7 @@ export default function QuizPage() {
               Bem-vindo ao quiz,
               {' '}
               {uName}
+              !
             </h1>
           </Widget.Header>
           <Widget.Content>
