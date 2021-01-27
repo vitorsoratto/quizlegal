@@ -1,18 +1,18 @@
 {
-    "bg": "https://i.pinimg.com/originals/66/ad/af/66adaf7071d6c36b30a6dbe984be48dc.jpg",
+    "bg": "https://images6.alphacoders.com/909/thumb-1920-909641.png",
     "title": "Quiz CSS da Alura",
     "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
     "questions": [
       {
-        "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-        "title": "Como fazer um seletor por id via CSS?",
-        "description": "Essa é pra aquecer",
+        "image": "https://data.whicdn.com/images/298125528/original.gif",
+        "title": "O nome da irmã de Morty, faz referencia a uma estação do ano. Qual é essa estação?",
+        "description": "Vamos começar tranquilos!",
         "answer": 2,
         "alternatives": [
-          ".elemento",
-          "*elemento",
-          "#elemento",
-          "%elemento"
+          "Inverno",
+          "Outono",
+          "Verão",
+          "Primavera"
         ]
       },
       {
@@ -31,12 +31,12 @@
     ],
     "theme": {
       "colors": {
-        "primary": "#0d47a1",
-        "secondary": "#29b6f6",
-        "mainBg": "#171B35",
+        "primary": "#4caf50",
+        "secondary": "#00a152",
+        "mainBg": "#011709",
         "contrastText": "#FFFFFF",
         "wrong": "#FF5722",
-        "success": "#4CAF50",
+        "success": "#00e676",
         "disabled": "#D3D3D3"
       },
       "borderRadius": "4px"

@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-bind */
 import React from 'react';
-import styled from 'styled-components';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -10,29 +9,9 @@ import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizLogo from '../src/components/QuizLogo';
+import QuizContainer from '../src/components/QuizContainer';
 import LinkButton from '../src/components/Button';
-
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-  }
-`;
-
-const NameInput = styled.input`
-  width: 100%;
-  max-width: 350px;
-  margin: auto;
-  padding: 10px 10px 10px 7px;
-  background-color: ${({ theme }) => theme.colors.mainBg};
-  border: 1px solid ${({ theme }) => theme.colors.secondary};
-  border-radius: 5px;
-  color: ${({ theme }) => theme.colors.contrastText};
-  font-weight: bold;
-`;
+import Input from '../src/components/Input';
 
 export default function Home() {
   const router = useRouter();
@@ -47,24 +26,20 @@ export default function Home() {
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>Programação</h1>
+            <h1>Rick and Morty Quiz!</h1>
           </Widget.Header>
           <Widget.Content>
-            <form onSubmit={function (event) {
+            <form onSubmit={(event) => {
               event.preventDefault();
               router.push(`/quiz?name=${name}`);
-              console.log('Fazendo o submit');
-
-              // router joga pra proxima pagina
             }}
             >
-              <NameInput
+              <Input
+                name="userName"
                 placeholder="Digite o seu nome"
                 id="name"
-                onChange={function (event) {
-                  // name = event.target.value;
-                  setName(event.target.value);
-                }}
+                onChange={(event) => setName(event.target.value)}
+                value={name}
               />
               <LinkButton type="submit" disabled={name.length === 0}>
                 JOGAR
