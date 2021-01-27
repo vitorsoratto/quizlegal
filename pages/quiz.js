@@ -23,6 +23,10 @@ const QuizContainer = styled.div`
 
 export default function QuizPage() {
   const router = useRouter();
+  const urlString = window.location.search;
+  const params = new URLSearchParams(urlString);
+  const uName = params.get('name');
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
@@ -32,7 +36,11 @@ export default function QuizPage() {
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>Página do Quiz</h1>
+            <h1>
+              Bem-vindo ao quiz,
+              {' '}
+              {uName}
+            </h1>
           </Widget.Header>
           <Widget.Content>
             <p>Lorem ipsum dolor sit amet...</p>

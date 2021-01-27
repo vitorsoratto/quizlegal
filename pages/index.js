@@ -67,8 +67,7 @@ export default function Home() {
                 }}
               />
               <LinkButton type="submit" disabled={name.length === 0}>
-                Jogar
-                {name}
+                JOGAR
               </LinkButton>
             </form>
           </Widget.Content>
