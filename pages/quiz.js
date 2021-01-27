@@ -23,9 +23,7 @@ const QuizContainer = styled.div`
 
 export default function QuizPage() {
   const router = useRouter();
-  const urlString = window.location.search;
-  const params = new URLSearchParams(urlString);
-  const uName = params.get('name');
+  const uName = router.query.name;
 
   return (
     <QuizBackground backgroundImage={db.bg}>
